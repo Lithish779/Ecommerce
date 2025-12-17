@@ -1,0 +1,7 @@
+CREATE TABLE teachers(
+    techer_id SERIAL PRIMARY KEY,
+    name VARCHAR(200),
+    subject VARCHAR(100)
+)
+pg library is used to connect nodejs to database
+
