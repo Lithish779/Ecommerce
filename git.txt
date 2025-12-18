@@ -1,4 +1,4 @@
 git status
 git add .
-git commit -m "feat: <what you changed today>"
+git commit -m "feat: <thursday otp added today>"
 git push
