@@ -1,29 +1,65 @@
 import { useContext } from "react";
 import CartContext from "../context/CartContext";
+import toast from "react-hot-toast";
 
-function ProductCard({ p }) {
+function ProductCard({ p, product }) {
+  const item = p || product || {};
   const { addItem } = useContext(CartContext);
 
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    addItem(item);
+
+    toast("Added to cart", {
+      style: {
+        background: "#111",
+        color: "#fff",
+        padding: "14px 18px",
+        borderRadius: "9999px",
+        fontSize: "13px",
+        fontWeight: "500",
+        letterSpacing: "0.3px",
+        border: "1px solid rgba(255,255,255,0.15)",
+      },
+    });
+  };
+
   return (
-    <div className="p-4 transition bg-white border rounded-lg shadow-sm hover:shadow-lg">
-      <img src={p.image} alt={p.name} className="object-cover w-full h-40 rounded" />
-      <h2 className="mt-2 font-semibold">{p.name}</h2>
-      <p className="mt-1 font-bold text-blue-600">₹{p.price}</p>
-      {/* <button
-        onClick={() => addItem(p)}
-        className="w-full py-2 mt-3 text-white bg-purple-600 rounded hover:bg-purple-700"
-      >
-        Add to cart
-      </button> */}
-      <button
-  onClick={() => addItem(p)}
-  className="w-full mt-3 py-3 bg-black text-white rounded-lg font-medium shadow-sm transition-all duration-300 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 active:scale-95 active:translate-y-0"
->
-  Add to Cart
-</button>
+    <div className="cursor-pointer group">
 
+      {/* IMAGE */}
+      <div className="relative overflow-hidden bg-[#f4f4f4] aspect-[4/5]">
+        <img
+          src={item.image}
+          alt={item.name}
+          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+        />
 
+        {/* ADD TO CART */}
+        <button
+          onClick={handleAddToCart}
+          className="absolute px-6 py-2 text-xs font-medium text-white transition-all duration-300 -translate-x-1/2 bg-black rounded-full opacity-0 cursor-pointer bottom-4 left-1/2 group-hover:opacity-100 hover:bg-gray-900 curser-pointer"
+        >
+          ADD TO CART
+        </button>
+      </div>
+
+      {/* INFO */}
+      <div className="mt-4 space-y-1">
+        <h3 className="text-base font-medium text-black">
+          {item.name}
+        </h3>
+
+        <p className="text-sm text-gray-500">
+          {item.brand || "Brand"}
+        </p>
+
+        <p className="mt-1 text-sm font-medium text-black">
+          ₹ {item.price}
+        </p>
+      </div>
     </div>
   );
 }
+
 export default ProductCard;

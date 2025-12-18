@@ -3,48 +3,44 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import authRoutes from "./routes/userRoutes.js";
-import productsRoutes from "./routes/Products11.js";          // renamed
-import productSearchRoutes from "./routes/productRoutes.js"; // renamed
+import authRoutes from "./routes/auth.js";   // OTP + Login routes
+import productRoutes from "./routes/productRoutes.js";
+import productsRoutes from "./routes/Products11.js";
 import productUpload from "./routes/productUpload.js";
 import addressRoutes from "./routes/addressRoutes.js";
 
 dotenv.config();
 
-// Validate environment variable
-if (!process.env.MONGO_URI) {
-  console.error("MONGO_URI missing in .env file");
-  process.exit(1);
-}
-
 const app = express();
 
+/* ================= MIDDLEWARE ================= */
 app.use(cors());
 app.use(express.json());
 
-// --- MongoDB Connect ---
+/* ================= MONGODB ================= */
+if (!process.env.MONGO_URI) {
+  console.error("MONGO_URI missing in .env");
+  process.exit(1);
+}
+
 mongoose
   .connect(process.env.MONGO_URI, {
     tls: true,
-    tlsAllowInvalidCertificates: true
+    tlsAllowInvalidCertificates: true,
   })
   .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.error("DB Error:", err));
+  .catch((err) => console.error(" MongoDB Error:", err));
 
-mongoose.connection.on("error", err => {
-  console.error("MongoDB runtime error:", err);
-});
-
-// --- Routes ---
-app.use("/auth", authRoutes);
-app.use("/products", productSearchRoutes);
-app.use("/products", productsRoutes);         // main product routes
-//app.use("/products", productSearchRoutes);    // search routes
-
+/* ================= ROUTES ================= */
+app.use("/auth", authRoutes);        // signup, otp, login
+app.use("/products", productRoutes);
+app.use("/products", productsRoutes);
 app.use("/admin", productUpload);
 app.use("/api/address", addressRoutes);
 
-// --- Server ---
-app.listen(4001, "0.0.0.0", () => {
-  console.log("Server running on port 4001");
+/* ================= SERVER ================= */
+const PORT = process.env.PORT || 4001;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(` Server running on port ${PORT}`);
 });
