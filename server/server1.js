@@ -37,6 +37,7 @@ app.use("/products", productRoutes);
 app.use("/products", productsRoutes);
 app.use("/admin", productUpload);
 app.use("/api/address", addressRoutes);
+app.use("/user/addresses", addressRoutes);
 
 /* ================= SERVER ================= */
 const PORT = process.env.PORT || 4001;
