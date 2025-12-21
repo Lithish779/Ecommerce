@@ -34,8 +34,12 @@ export default function CategoryPage() {
       title: "Makeup Collection",
       description:
         "Foundations, lipsticks, palettes, and more from top brands.",
-      banner:
-        "https://www.shutterstock.com/image-photo/cheerful-young-woman-white-blouse-260nw-2212525959.jpg",
+      // replaced single banner with a set of GIFs for the makeup category
+      gifs: [
+        "https://cdn.prod.website-files.com/61c44817190504d47e91cbc4/68a30873ae20130ac82f1c2d_zodiac%20k%20beauty%20cover.gif",
+        "https://cdn.prod.website-files.com/61c44817190504d47e91cbc4/68bb142b2a2cbffcb49b2295_IMG_0710-ezgif.com-optimize%203.gif",
+        "https://cdn.prod.website-files.com/61c44817190504d47e91cbc4/68c27c3c1b04fb73dc6554e9_Top%20Shelf_10%20Serum_V02%20cover.gif",
+      ],
     },
     gifts: {
     title: "Gift Sets & Hampers",
@@ -118,13 +122,26 @@ export default function CategoryPage() {
   return (
     <div className="px-6 py-10 mx-auto max-w-7xl">
 
-      {/* Banner */}
-      {info.banner && (
-        <img
-          src={info.banner}
-          alt={info.title}
-          className="object-cover w-full h-64 mb-10 rounded-xl"
-        />
+      {/* Banner or GIFs */}
+      {info.gifs ? (
+        <div className="grid grid-cols-1 gap-4 mb-10 md:grid-cols-3">
+          {info.gifs.map((g, i) => (
+            <img
+              key={i}
+              src={g}
+              alt={`${info.title} ${i + 1}`}
+              className="object-cover w-full h-64 rounded-xl"
+            />
+          ))}
+        </div>
+      ) : (
+        info.banner && (
+          <img
+            src={info.banner}
+            alt={info.title}
+            className="object-cover w-full h-64 mb-10 rounded-xl"
+          />
+        )
       )}
 
       {/* Title */}

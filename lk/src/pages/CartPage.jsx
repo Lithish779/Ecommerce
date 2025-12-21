@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import CartContext from "../context/CartContext.jsx";
 import { Link } from "react-router-dom";
+import { FiShoppingBag } from "react-icons/fi";
 
 export default function Cart() {
   const { cart, removeFromCart, clearCart, changeQty } = useContext(CartContext);
@@ -15,7 +16,12 @@ export default function Cart() {
   return (
     <div className="p-6 shadow-lg bg-white/10 backdrop-blur-md rounded-2xl">
     <div className="max-w-6xl p-6 mx-auto">
-      <h1 className="mb-6 text-3xl font-bold">Your Cart</h1>
+      <h1 className="mb-6 text-3xl font-bold flex items-center gap-3">
+        <span className="p-2 rounded-full bg-white/5">
+          <FiShoppingBag className="text-white" size={20} />
+        </span>
+        Your Cart
+      </h1>
 
       {cart.length === 0 ? (
         <div className="mt-20 text-center">

@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import ProductCard from "../components/ProductCard";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const heroSlides = [
@@ -23,7 +24,7 @@ export default function Home() {
       title: "Luxury Makeup Picks",
       subtitle: "Flat 20% Off",
       desc: "Trending essentials you’ll love.",
-      img: "https://m.media-amazon.com/images/I/71TtkiOaU7L.jpg",
+      img: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/company/1/applications/62d53777f5ad942d3e505f77/theme/pictures/free/original/BOJ-Desktop-1766137382762.jpeg?dpr=1",
       link: "/category/makeup",
     },
     {
@@ -44,14 +45,14 @@ export default function Home() {
       title: "Men Grooming",
       subtitle: "Everyday Essentials",
       desc: "Effortless daily style.",
-      img: "https://cdn.i.haymarketmedia.asia/?n=campaign-india%2Fcontent%2Fiframe+width%3D560+height%3D315+src%3Dhttpswww.youtube.comembedEpu3lIByuuksi%3DsLPgApuxv_R3JPJG+title%3DYouTube+video+player+frameborder%3D0+allow%3Daccelerometer%3B+autoplay%3B+clipboard-write%3B+encrypted-media%3B+gy.jpg",
+      img: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/company/1/applications/62d53777f5ad942d3e505f77/theme/pictures/free/original/Beardo-Top-Carousel-D-1766323345998.jpeg?dpr=1",
       link: "/category/men",
     },
     {
       title: "Bath & Body",
       subtitle: "Relax & Refresh",
       desc: "Wellness starts here.",
-      img: "https://www.bathandbodyworks.in/on/demandware.static/-/Sites-bathandbody_storefront_catalog/default/dw5f8d3c20/QQQ%2030.jpg",
+      img: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/company/1/applications/62d53777f5ad942d3e505f77/theme/pictures/free/original/DIP-Desktop-1766314327576.jpeg?dpr=1",
       link: "/category/bath-body",
     },
     {
@@ -65,14 +66,14 @@ export default function Home() {
       title: "Mini Essentials",
       subtitle: "Travel Friendly",
       desc: "Small size, big impact.",
-      img: "https://www.srisritattva.com/cdn/shop/products/MiniEssential.jpg?v=1700222302&width=1445",
+      img: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/platform/extensions/widget-manager/free/original/5TH-aVwFJ-Akind-Top-Banner-Desktop.jpg",
       link: "/category/minis",
     },
     {
       title: "Gift Combos",
       subtitle: "Festive Specials",
       desc: "Curated gifting made easy.",
-      img: "https://houseofaroma.in/wp-content/uploads/2025/09/Gifts-for-Festivals-3.webp",
+      img: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/company/1/applications/62d53777f5ad942d3e505f77/theme/pictures/free/original/Wedding-top-carousel-desk-1758087102331.jpeg?dpr=1",
       link: "/category/gifts",
     },
   ];
@@ -82,32 +83,154 @@ export default function Home() {
       id: 1,
       name: "Glow Skin Serum",
       price: 299,
-      image: "https://img.freepik.com/premium-vector/cosmetics-skin-care-product-ads-with-bottle-banner-ad-beauty-products-with-paper-art-love_258787-2914.jpg",
+      image:
+        "https://img.freepik.com/premium-vector/cosmetics-skin-care-product-ads-with-bottle-banner-ad-beauty-products-with-paper-art-love_258787-2914.jpg",
     },
     {
       id: 2,
       name: "Hair Strength Oil",
       price: 249,
-      image: "https://img.freepik.com/premium-vector/hair-care-products-ad_258787-3104.jpg",
+      image:
+        "https://img.freepik.com/premium-vector/hair-care-products-ad_258787-3104.jpg",
     },
     {
       id: 3,
       name: "Daily Face Wash",
       price: 199,
-      image: "https://img.freepik.com/premium-vector/face-wash-ad-banner_258787-3120.jpg",
+      image:
+        "https://img.freepik.com/premium-vector/face-wash-ad-banner_258787-3120.jpg",
     },
     {
       id: 4,
       name: "Night Repair Cream",
       price: 349,
-      image: "https://img.freepik.com/premium-vector/beauty-cream-ad_258787-3140.jpg",
+      image:
+        "https://img.freepik.com/premium-vector/beauty-cream-ad_258787-3140.jpg",
+    },
+    // -------- NEW PRODUCTS (Tira / Beardo style) --------
+    {
+      id: 5,
+      name: "Beardo Ultimate Grooming Combo",
+      price: 899,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/beardo/COMBO_240105061543-P-V/0/4jJuLMpwPF-1115802_Combo_3-1.jpg",
+    },
+    {
+      id: 6,
+      name: "Beardo Beard Care Essentials Kit",
+      price: 1099,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/beardo/COMBO_240617093052-XB2/0/91cnGQcUZv-1142149_Combo_86-1.jpg",
+    },
+    {
+      id: 7,
+      name: "Luxury Eau De Parfum",
+      price: 1299,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:2360/MQE2t4rduJb-1184971_1.jpg",
+    },
+    {
+      id: 8,
+      name: "Premium Fragrance Spray",
+      price: 999,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:2360/1143822/aoR1t47tTgj-1143822-1.jpg",
+    },
+    {
+      id: 9,
+      name: "Refreshing Body Mist",
+      price: 799,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:2360/1092599/4ntjF7M5a6-8901030824159_1.jpg",
+    },
+    {
+      id: 10,
+      name: "Daily Grooming Essentials",
+      price: 699,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:2360/d6rBJDazj4-1053243_1.jpg",
+    },
+    {
+      id: 11,
+      name: "Hydrating Face Moisturizer",
+      price: 999,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:2360/1134268/eokTXLsIEv-1134268_1.jpg",
+    },
+    {
+      id: 12,
+      name: "Vitamin C Brightening Serum",
+      price: 1199,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:2360/1127911/5_2GGOpZ4-8901030960147_1.jpg",
+    },
+    {
+      id: 13,
+      name: "Luxury Eau De Parfum",
+      price: 1599,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:2360/1143221/IOIy0WEMcs-1143221-1.jpg",
+    },
+    {
+      id: 14,
+      name: "Nourishing Hair Care Shampoo",
+      price: 699,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:2360/1067255/A_Oc8BTN4-1067255_1.jpg",
+    },
+    {
+      id: 15,
+      name: "Repair & Protect Hair Mask",
+      price: 899,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:2360/1157834/GHaIA_1vGU-1157834_1.jpg",
+    },
+    {
+      id: 16,
+      name: "Jo Malone London Signature Fragrance",
+      price: 6499,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/company/1/applications/62d53777f5ad942d3e505f77/theme/pictures/free/resize-w:800/Jo-Malone-London-1766146482040.jpeg",
+    },
+    {
+      id: 17,
+      name: "Allies of Skin Advanced Skincare",
+      price: 4899,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/company/1/applications/62d53777f5ad942d3e505f77/theme/pictures/free/resize-w:800/Allies-of-skin-Tira-red-D-1766146629899.jpeg",
+    },
+    {
+      id: 18,
+      name: "Refreshing Facial Cleanser",
+      price: 549,
+      image:
+        "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:2360/1076219/u-BLOjFBR-1076219_1.jpg",
     },
   ];
+
+  const brandVideos = [
+    {
+      id: 1,
+      title: "NARS Summer Collection",
+      src: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/platform/extensions/widget-manager/free/original/Ouhqk0OqR-NARS_SU25_Web_1.mp4",
+    },
+    {
+      id: 2,
+      title: "Lakmé x Aneet",
+      src: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/platform/extensions/widget-manager/free/original/3l4alVR-k-Lakme-Aneet_Web.mp4",
+    },
+    {
+      id: 3,
+      title: "Lakmé x Kareena",
+      src: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/platform/extensions/widget-manager/free/original/DfGm026H6-Lakme-Kareena_Web.mp4",
+    },
+  ];
+  
 
   return (
     <div className="w-full">
 
-      {/* ================= AJIO-STYLE HERO ================= */}
+      {/* ================= HERO ================= */}
       <div className="px-6 pt-6 mx-auto max-w-7xl">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
@@ -130,38 +253,62 @@ export default function Home() {
                     alt={slide.title}
                     className="absolute inset-0 object-cover w-full h-full"
                   />
-
-                  {/* Overlay */}
                   <div className="absolute inset-0 bg-black/20" />
-
-                  {/* Content */}
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7 }}
                     className="absolute max-w-md text-white left-12 bottom-12"
                   >
-                    <p className="text-sm tracking-wide uppercase opacity-90">
+                    <p className="text-sm uppercase opacity-90">
                       {slide.subtitle}
                     </p>
-
-                    <h1 className="mt-2 text-4xl font-bold leading-tight">
+                    <h1 className="mt-2 text-4xl font-bold">
                       {slide.title}
                     </h1>
-
                     <p className="mt-3 text-sm opacity-90">
                       {slide.desc}
                     </p>
-
-                    <button className="px-6 py-3 mt-6 text-sm font-semibold text-black bg-white rounded-full">
-                      Shop Now
-                    </button>
                   </motion.div>
                 </div>
               </Link>
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+
+      {/* ================= BRAND VIDEOS (NOW HERE) ================= */}
+      <div className="px-6 py-16 mx-auto max-w-7xl">
+        <h2 className="mb-8 text-2xl font-semibold">
+          Featured Campaigns
+        </h2>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {brandVideos.map((video) => (
+            <Link key={video.id} to="/category/makeup">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="relative overflow-hidden bg-black rounded-2xl"
+              >
+                <video
+                  src={video.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="object-cover w-full h-[420px]"
+                />
+                <div className="absolute inset-0 bg-black/10" />
+                <div className="absolute bottom-4 left-4">
+                  <p className="text-sm font-medium text-white">{video.title}</p>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
+        </div>
       </div>
 
       {/* ================= DEALS ================= */}
@@ -177,6 +324,7 @@ export default function Home() {
         </div>
       </div>
 
+      <Footer />
     </div>
   );
 }

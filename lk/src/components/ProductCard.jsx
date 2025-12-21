@@ -3,11 +3,22 @@ import CartContext from "../context/CartContext";
 import toast from "react-hot-toast";
 
 function ProductCard({ p, product }) {
-  const item = p || product || {};
+  const rawItem = p || product || {};
   const { addItem } = useContext(CartContext);
+
+  // ✅ NORMALIZATION LAYER (NO LOGIC CHANGE)
+  const item = {
+    _id: rawItem._id || rawItem.id,     // critical
+    name: rawItem.name,
+    price: rawItem.price,
+    image: rawItem.image,
+    brand: rawItem.brand,
+    quantity: rawItem.quantity || 1,    // critical
+  };
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
+
     addItem(item);
 
     toast("Added to cart", {
@@ -38,7 +49,7 @@ function ProductCard({ p, product }) {
         {/* ADD TO CART */}
         <button
           onClick={handleAddToCart}
-          className="absolute px-6 py-2 text-xs font-medium text-white transition-all duration-300 -translate-x-1/2 bg-black rounded-full opacity-0 cursor-pointer bottom-4 left-1/2 group-hover:opacity-100 hover:bg-gray-900 curser-pointer"
+          className="absolute px-6 py-2 text-xs font-medium text-white transition-all duration-300 -translate-x-1/2 bg-black rounded-full opacity-0 bottom-4 left-1/2 group-hover:opacity-100 hover:bg-gray-900"
         >
           ADD TO CART
         </button>

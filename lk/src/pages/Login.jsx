@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FiUser } from "react-icons/fi";
 import { API } from "./api";
 import toast from "react-hot-toast";
 
@@ -219,12 +220,17 @@ export default function Login() {
 
           {/* RIGHT PANEL */}
           <div className="w-[320px] flex items-center justify-center bg-[#020617] border-l border-cyan-400/20">
-            <h2
-              className={`text-3xl font-bold text-white transition-opacity duration-300
-              ${animating ? "opacity-0" : "opacity-100"}`}
+            <div
+              className={`text-center transition-opacity duration-300 ${animating ? "opacity-0" : "opacity-100"}`}
             >
-              {rightTitle}
-            </h2>
+              <div className="flex items-center justify-center mb-4">
+                <span className="p-3 rounded-full bg-orange-50">
+                  <FiUser className="text-orange-500" size={28} />
+                </span>
+              </div>
+
+              <h2 className="text-3xl font-bold text-white">{rightTitle}</h2>
+            </div>
           </div>
         </div>
       </div>
