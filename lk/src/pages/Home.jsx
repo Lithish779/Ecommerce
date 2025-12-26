@@ -38,7 +38,7 @@ export default function Home() {
       title: "Fragrance Deals",
       subtitle: "Up to 30% Off",
       desc: "Premium perfumes, curated.",
-      img: "https://mxp-media.ilnmedia.com/media/content/2025/Oct/Line-it-Shape-it-Own-it_68e28376b048f.jpg",
+      img: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/company/1/applications/62d53777f5ad942d3e505f77/theme/pictures/free/original/CLP-Fragrance-Calvin-Klein-D-1766333450648.jpeg?dpr=1",
       link: "/category/fragrance",
     },
     {
