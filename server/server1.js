@@ -74,15 +74,15 @@ app.use(express.json());
 
 /* ================= MONGODB ================= */
 if (!process.env.MONGO_URI) {
-  console.error("❌ MONGO_URI missing in .env");
+  console.error("MONGO_URI missing in .env");
   process.exit(1);
 }
 
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB Connected"))
+  .then(() => console.log(" MongoDB Connected"))
   .catch((err) => {
-    console.error("❌ MongoDB Connection Error:", err);
+    console.error("MongoDB Connection Error:", err);
     process.exit(1);
   });
 
