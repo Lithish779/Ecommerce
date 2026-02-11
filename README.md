@@ -1,11 +1,9 @@
 🛒 Full-Stack E-Commerce Platform
-
 A production-ready full-stack e-commerce web application built using React.js (frontend) and Node.js + Express.js (backend). The platform supports authentication, product browsing, cart management, and order processing with secure API architecture.
 
 🚀 Features
 
 🔐 User Registration & Login (JWT Authentication)
-
 🛍️ Product Listing & Dynamic Product Pages
 
 🛒 Add to Cart & Cart Management
@@ -81,7 +79,7 @@ Protected routes validated via middleware
 
 ⚙️ Installation & Setup
 1️⃣ Clone Repository
-git clone https://github.com/your-username/ecommerce.git
+git clone https://github.com/Lithish779/ecommerce.git
 cd ecommerce
 
 2️⃣ Backend Setup
@@ -92,7 +90,7 @@ npm run dev
 
 Create .env file inside server/:
 
-PORT=5000
+PORT=XXXX
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 
@@ -108,7 +106,7 @@ Vercel / Netlify
 
 Backend
 
-Railway / Render
+Render
 
 Ensure:
 
@@ -129,8 +127,6 @@ Production build is optimized
 ❤️ Wishlist Feature
 
 📦 Order Tracking
-
-🐳 Docker Deployment
 
 🧠 What This Project Demonstrates
 
