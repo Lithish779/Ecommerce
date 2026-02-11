@@ -4,6 +4,7 @@ A production-ready full-stack e-commerce web application built using React.js (f
 🚀 Features
 
 🔐 User Registration & Login (JWT Authentication)
+
 🛍️ Product Listing & Dynamic Product Pages
 
 🛒 Add to Cart & Cart Management
