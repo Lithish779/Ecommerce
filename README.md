@@ -1,143 +1,88 @@
-🛒 Full-Stack E-commerce Platform
+🛒 E-Commerce Platform
+A full-stack e-commerce web application built with React (Frontend) and Node.js + Express (Backend).
+Designed with scalability, modularity, and production-readiness in mind.
 
-A scalable, production-oriented full-stack e-commerce application built with modern web technologies. The platform focuses on clean UI, reliable APIs, and real-world shopping workflows including product discovery, cart management, authentication, and checkout.
+🚀 Overview
+This platform enables users to:
+Browse products
+Add to cart
+Place orders
+Authenticate securely
+Manage user accounts
+Built using modern web development practices with a clean separation of frontend and backend.
 
-This project is designed to demonstrate end-to-end engineering ownership—from frontend UX to backend architecture and database design.
+🏗️ Tech Stack
 
-🚀 Key Highlights
-
-Modular, component-driven frontend architecture
-
-RESTful backend with clean separation of concerns
-
-Persistent cart and user session handling
-
-Optimized data flow between client and server
-
-Production-ready folder structure and conventions
-
-🧱 Tech Stack
 Frontend
-
 React.js
-
-Tailwind CSS
-
-React Router
-
 Axios
+React Router
+Context API / State Management
+CSS / Tailwind (if used)
 
 Backend
-
 Node.js
-
 Express.js
-
-MongoDB (Mongoose ODM)
-
-Tooling & DevOps
-
-Git & GitHub
-
-Postman (API testing)
-
-Environment-based configuration
-
-✨ Core Features
-
-User authentication (login & logout)
-
-Product listing with categories
-
-Search and filtering
-
-Cart management (add, update, remove)
-
-Checkout workflow
-
-Persistent state using local storage / database
-
-Responsive, mobile-first UI
-
-Ecommerce/
+MongoDB (or SQL if you're using it)
+JWT Authentication
+Bcrypt for password hashing
+📂 Project Structure
+ecommerce/
 │
-├── lk/                          # Frontend (React Application)
-│   │
-│   ├── public/
-│   │   ├── index.html
-│   │   └── favicon.ico
-│   │
+├── client/              # React Frontend
 │   ├── src/
-│   │   ├── assets/              # Images, icons, static assets
-│   │   │
-│   │   ├── components/          # Reusable UI components
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   ├── ProductCard.jsx
-│   │   │   └── Loader.jsx
-│   │   │
-│   │   ├── pages/               # Route-level pages
-│   │   │   ├── Home.jsx
-│   │   │   ├── Login.jsx
-│   │   │   ├── Register.jsx
-│   │   │   ├── ProductDetails.jsx
-│   │   │   ├── Cart.jsx
-│   │   │   ├── Checkout.jsx
-│   │   │   └── NotFound.jsx
-│   │   │
-│   │   ├── context/             # Global state management
-│   │   │   ├── CartContext.jsx
-│   │   │   └── AuthContext.jsx
-│   │   │
-│   │   ├── services/            # API calls & external services
-│   │   │   └── api.js
-│   │   │
-│   │   ├── utils/               # Helper functions
-│   │   │   └── formatPrice.js
-│   │   │
-│   │   ├── App.jsx              # Root component
-│   │   ├── main.jsx             # Entry point
-│   │   └── index.css            # Global styles
-│   │
-│   ├── .env                     # Frontend environment variables
-│   ├── package.json
-│   └── vite.config.js / webpack.config.js
+│   ├── components/
+│   ├── pages/
+│   └── api/
 │
-├── server/                      # Backend (Node.js + Express)
-│   │
-│   ├── config/                  # Configuration files
-│   │   ├── db.js                # MongoDB connection
-│   │   └── env.js
-│   │
-│   ├── models/                  # Database schemas (Mongoose)
-│   │   ├── User.js
-│   │   ├── Product.js
-│   │   ├── Cart.js
-│   │   └── Order.js
-│   │
-│   ├── controllers/             # Business logic
-│   │   ├── authController.js
-│   │   ├── productController.js
-│   │   ├── cartController.js
-│   │   └── orderController.js
-│   │
-│   ├── routes/                  # API routes
-│   │   ├── authRoutes.js
-│   │   ├── productRoutes.js
-│   │   ├── cartRoutes.js
-│   │   └── orderRoutes.js
-│   │
-│   ├── middleware/              # Custom middleware
-│   │   ├── authMiddleware.js
-│   │   └── errorHandler.js
-│   │
-│   ├── utils/                   # Utility helpers
-│   │   └── generateToken.js
-│   │
-│   ├── .env                     # Backend environment variables
-│   ├── server.js                # App entry point
-│   └── package.json
+├── server/              # Node Backend
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   └── config/
 │
-├── .gitignore
-├── README.md
-└── package-lock.json
+└── README.md
+
+🔐 Authentication Flow
+User registers → password hashed using bcrypt
+User logs in → JWT token generated
+Token stored securely (localStorage / cookies)
+Protected routes validated via middleware
+
+🛍️ Core Features
+✅ User Registration & Login
+✅ Product Listing
+✅ Product Details Page
+✅ Add to Cart
+✅ Cart Management
+✅ Order Placement
+✅ Backend API Integration
+✅ Toast Notifications
+✅ Responsive UI
+
+🌍 Deployment
+Frontend
+Vercel / Netlify
+Backend
+Render
+📈 Future Improvements
+Payment Gateway Integration (Stripe / Razorpay)
+Product Reviews
+Wishlist Feature
+Order Tracking
+Performance Optimization
+Dockerization
+
+🧠 Learning Outcomes
+This project demonstrates:
+Full-stack architecture understanding
+REST API development
+Authentication & Authorization
+State management
+Database integration
+Deployment pipeline
+
+👨‍💻 Author
+
+Developed as part of full-stack learning and placement preparation.
