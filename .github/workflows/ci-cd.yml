@@ -2,7 +2,7 @@ name: MarketZen CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-test:
@@ -12,16 +12,18 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      #  FIX 1: Upgrade Node version
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
+          cache: "npm"
 
       # ===== BACKEND =====
       - name: Install server deps
         run: |
           cd server
-          npm install
+          npm ci
 
       - name: Test server
         run: |
@@ -29,9 +31,10 @@ jobs:
           npm test || echo "No tests yet"
 
       # ===== FRONTEND =====
-      - name: Install frontend deps
+      - name: Clean install frontend deps
         run: |
           cd frontend
+          rm -rf node_modules package-lock.json
           npm install
 
       - name: Build frontend
