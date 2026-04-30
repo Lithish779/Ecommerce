@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -237,6 +238,21 @@ export default function Home() {
 
   return (
     <div className="w-full">
+      <Helmet>
+        <title>Marketzen | Discover Curated Beauty & Wellness</title>
+        <meta name="description" content="Shop the latest in beauty, skincare, and wellness at Marketzen. Experience smart shopping with our AI skin analyzer and routine builder." />
+        <meta name="keywords" content="beauty, skincare, makeup, fragrance, hair care, Marketzen, smart shopping" />
+        <link rel="canonical" href="https://marketzen.vercel.app/" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Marketzen | Discover Curated Beauty & Wellness" />
+        <meta property="og:description" content="Shop the latest in beauty, skincare, and wellness. Experience smart shopping with our AI tools." />
+        <meta property="og:url" content="https://marketzen.vercel.app/" />
+        
+        {/* Twitter */}
+        <meta property="twitter:title" content="Marketzen | Discover Curated Beauty & Wellness" />
+        <meta property="twitter:description" content="Shop the latest in beauty, skincare, and wellness. Experience smart shopping with our AI tools." />
+      </Helmet>
 
       {/* ================= HERO ================= */}
       <div className="px-6 pt-6 mx-auto max-w-7xl">

@@ -5,6 +5,7 @@ import CartContext from "../context/CartContext.jsx";
 import { useWishlist } from "../context/WishlistContext.jsx";
 import { FaShoppingCart, FaHeart, FaChevronRight, FaStar, FaShieldAlt, FaTruck, FaUndo } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -102,6 +103,27 @@ export default function ProductDetails() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>{`${product.name} | Marketzen`}</title>
+        <meta name="description" content={product.description || `Buy ${product.name} at Marketzen. Quality guaranteed.`} />
+        <meta name="keywords" content={`${product.name}, ${product.category}, buy ${product.name}, Marketzen beauty`} />
+        <link rel="canonical" href={`https://marketzen.vercel.app/product/${id}`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`${product.name} | Marketzen`} />
+        <meta property="og:description" content={product.description || `Explore ${product.name} in our ${product.category} collection.`} />
+        <meta property="og:image" content={product.image} />
+        <meta property="og:url" content={`https://marketzen.vercel.app/product/${id}`} />
+        <meta property="og:type" content="product" />
+        <meta property="product:price:amount" content={product.price} />
+        <meta property="product:price:currency" content="INR" />
+
+        {/* Twitter */}
+        <meta property="twitter:title" content={`${product.name} | Marketzen`} />
+        <meta property="twitter:description" content={product.description || `Check out ${product.name} at Marketzen.`} />
+        <meta property="twitter:image" content={product.image} />
+      </Helmet>
+
       {/* Breadcrumbs */}
       <div className="bg-gray-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-gray-400">

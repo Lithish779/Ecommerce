@@ -3,6 +3,7 @@ import { API } from "./api.jsx";
 import { motion } from "framer-motion";
 import { Package, Truck, CheckCircle, Clock, ChevronRight, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const StatusBadge = ({ status }) => {
   const styles = {
@@ -77,6 +78,11 @@ export default function OrdersPage() {
 
   return (
     <div className="bg-[#FAFAFA] min-h-screen">
+      <Helmet>
+        <title>Order History | Marketzen</title>
+        <meta name="description" content="Track your curated beauty and wellness orders at Marketzen. View your selection details and delivery status." />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <div className="max-w-6xl mx-auto px-6 py-10 md:py-16">
         <div className="mb-10 md:mb-16">
           <h1 className="text-3xl md:text-5xl font-light text-slate-900 tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>Order History</h1>

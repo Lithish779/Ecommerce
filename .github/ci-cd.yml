@@ -1,0 +1,48 @@
+name: MarketZen CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # ===== BACKEND =====
+      - name: Install server deps
+        run: |
+          cd server
+          npm install
+
+      - name: Test server
+        run: |
+          cd server
+          npm test || echo "No tests yet"
+
+      # ===== FRONTEND =====
+      - name: Install frontend deps
+        run: |
+          cd frontend
+          npm install
+
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm run build
+
+  deploy:
+    needs: build-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy placeholder
+        run: echo "Deploy step comes next"

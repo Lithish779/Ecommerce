@@ -5,6 +5,7 @@ import "./index.css";
 
 import { CartProvider } from "./context/CartContext";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import { HelmetProvider } from "react-helmet-async";
 
 const GOOGLE_CLIENT_ID =
   "192818920134-btagci97kjs33o5pjfpi380urt5a4c88.apps.googleusercontent.com";
@@ -12,9 +13,11 @@ const GOOGLE_CLIENT_ID =
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-      <CartProvider>
-        <App />
-      </CartProvider>
+      <HelmetProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </HelmetProvider>
     </GoogleOAuthProvider>
   </React.StrictMode>
 );

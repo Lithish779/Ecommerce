@@ -3,6 +3,7 @@ import { API } from "./api.jsx";
 import { FaMicroscope, FaExclamationTriangle, FaLeaf, FaFlask, FaCheckCircle } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 export default function IngredientChecker() {
   const [ingredients, setIngredients] = useState("");
@@ -27,6 +28,22 @@ export default function IngredientChecker() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>AI Ingredient Checker | Marketzen Beauty Intelligence</title>
+        <meta name="description" content="Use Marketzen's AI Ingredient Checker to analyze skincare and beauty product formulas. Get instant safety scores and expert recommendations." />
+        <meta name="keywords" content="skincare ingredients, beauty analyzer, ingredient safety, toxic ingredients checker, Marketzen AI" />
+        <link rel="canonical" href="https://marketzen.vercel.app/ingredient-checker" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="AI Ingredient Checker | Marketzen Beauty Intelligence" />
+        <meta property="og:description" content="Analyze your skincare products for safety and efficacy with our AI-powered tool." />
+        <meta property="og:url" content="https://marketzen.vercel.app/ingredient-checker" />
+        
+        {/* Twitter */}
+        <meta property="twitter:title" content="AI Ingredient Checker | Marketzen Beauty Intelligence" />
+        <meta property="twitter:description" content="Analyze your skincare products for safety and efficacy with our AI-powered tool." />
+      </Helmet>
+
       {/* HERO */}
       <div className="bg-slate-900 border-b border-white/5 py-24 px-6 text-center">
         <motion.div 
